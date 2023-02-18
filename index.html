@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" href="img/gf.png" type="image/x-icon">
+    <meta name="description" content="Gonza Family's">
+    <meta property="og:locale" content="es_ES"/>
+    <meta property="og:site_name" content="Gonza Family's"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Gonza Family's"/>
+    <meta property="og:description" content="Buy a minecraft skin"/>
+    <meta property="og:url" content="https://gonzalupa.github.io/"/>
+    <meta property="og:image" content="img/gf.png"/>
+    <meta property="og:image:secure_url" content="img/gf.png"/>
+    <meta property="og:image:width" content="540"/>
+    <meta property="og:image:height" content="520"/>
+</head>
+<body>
+    <div class="showout">
+        <div class="showoutimg">
+            <img src="img/gf.png">
+        </div>
+        <h1>BIENVENIDO AMIGO</h1>
+    </div>
+    <div class="family">
+        <div class="fivem">
+            <div class="fivem-container">
+                <h1>IMAGES FROM FIVEM DEVELOPER</h1>
+                <h2>
+                    <a href="https://discord.com/users/929421285002461195">Gonzalapa#3248</a>
+                </h2>
+            </div>
+            <div class="fivem-container">
+                <div class="img"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .showout {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2em;
+            background-color: rgb(0,0,0,.5);
+            transition: all .3s;
+        }
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #69f8a0 !important;
+            text-shadow: .1em .1em .1em #000;
+            background-image: url(img/wp.jpg);
+            background-size: cover;
+            overflow: hidden;
+        }
+        .family {
+            transition: .5s;
+        }
+        .fivem {
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 1em;
+            height: 100%;
+        }
+
+        .fivem-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fivem-container:last-child {
+            height: 44em;
+            overflow-x: auto;
+        }
+
+        .fivem-container {
+            padding: 1.2em;
+            background-color: rgb(0,0,0,.5);
+            margin: .2em;
+        }
+
+        .fivem-container .img {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .img-container {
+            position: relative;
+            margin: .2vw;
+            padding: 0.4vw;
+            background-color: #000;
+            width: 20em;
+            height: 10em;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    </style>
+    <script defer>
+        const imgs = ['a','b','c','d','e','f','g']
+        const imgContainer = document.querySelector('.img')
+        const Sound = new Audio('sexy.mp3')
+        const family = document.querySelector('.family')
+        const showout = document.querySelector('.showout')
+        family.style.opacity = 0;
+        showout.style.opacity = '0'
+        setTimeout(() => {
+            showout.style.opacity = 1;
+            setTimeout(() => {
+                showout.style.opacity = 0;
+                setTimeout(() => {
+                    showout.style.display = 'none'
+                    family.style.opacity = 1
+                    Sound.volume = 1.0;
+                    Sound.play();
+                    Sound.onended = () => {
+                        Sound.play();
+                    }
+                    imgs.forEach(img => {
+                        const imgElement = document.createElement('div')
+                        imgElement.classList.add('img-container')
+                        imgElement.innerHTML = `<img src="img/${img}.png" alt="${img}">`
+                        imgContainer.appendChild(imgElement)
+                    })
+                }, 1000)
+            }, 5000)
+        }, 1)
+    </script>
+</body>
+</html>
